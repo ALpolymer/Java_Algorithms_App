@@ -9,7 +9,68 @@ import java.util.Scanner;
 public class Main {
     static Scanner in = new Scanner(System.in);
     public static void main(String[] args) {
-     arrayDiagonalsImpl();
+     Scanner in = new Scanner(System.in);
+     int choice;
+     do{
+         System.out.println();
+         System.out.println("---->ALGORITHMS<----");
+         System.out.println("Please select one of the following algorithms:");
+         System.out.println("0. Exit application");
+         System.out.println("1. Add Integers");
+         System.out.println("2. Add array values");
+         System.out.println("3. Compare scores of Alice and Bob");
+         System.out.println("4. Find sum of 2d square matrix diagonals");
+         System.out.println("5. Draw staircase");
+         System.out.println("6. Find relative frequencies of positive, negative, and zeroes from an array");
+         System.out.println("7. Find the sum of n-1 smaller and biggest integers of n length array");
+         System.out.println("8. Find frequency of the max element of array");
+         System.out.println("9. Count records breaking");
+         System.out.println("11. Find if a positive integer is prime");
+         System.out.println("12. Reverse a string");
+         System.out.println("13. Find the n-th fibonacci number");
+         System.out.println("14. Check if a string is an anagram");
+         System.out.println("15. Remove duplicate characters from a string");
+         System.out.println("16. Find the character with the maximum number of occurrences in a string");
+         System.out.println("17. Check if a string is a palindrome");
+         System.out.println("18. Replace whitespaces in string");
+         System.out.println("19. Find pairs of integers in an array that sum up to a target sum");
+         System.out.println("20. Rotate the elements of an array given a fixed offset");
+
+
+
+
+         choice = in.nextInt();
+
+         switch (choice){
+             case 0 -> System.out.println("Exiting app...");
+             case 1 -> addAppImpl();
+             case 2 -> addArrayValuesImpl();
+             case 3 -> compareScoresImpl();
+             case 4 -> arrayDiagonalsImpl();
+             case 5 -> stairCaseImpl();
+             case 6 -> integersFreqImpl();
+             case 7 -> minMaxSumImpl();
+             case 8 -> maxCountImpl();
+             case 9 -> countRecordsImpl();
+             case 10 -> findMaxIndexImpl();
+             case 11 -> isPrimeImpl();
+             case 12 -> reverseStrImpl();
+             case 13 -> fibImpl();
+             case 14 -> anagramImpl();
+             case 15 -> removeDuplicatesImpl();
+             case 16 -> charMaxCountImpl();
+             case 17 -> isPalindromeImpl();
+             case 18 -> replaceWhitespacesImpl();
+             case 19 -> targetSumImpl();
+             case 20 -> leftRotationOfArrayImpl();
+
+
+             default -> System.out.println("\nWrong choice...");
+         }
+     } while (choice != 0);
+
+        System.out.println("Goodbye!!!");
+
 
     }
 
@@ -20,7 +81,6 @@ public class Main {
 
         System.out.println("Το άθροισμα των " + a +"," +  b + " είναι: " + Utils.add(a,b));
     }
-
 
     public static void addArrayValuesImpl(){
         int [] arr = IOUtils.arrayInput();
@@ -91,23 +151,18 @@ public class Main {
 
         result = Algorithms.integersFreq(arr);
 
-        System.out.println(Arrays.toString(result));
+        System.out.println("The frequency of positives is: " + result[0]);
+        System.out.println("The frequency of negatives is: " + result[1]);
+        System.out.println("The frequency of zeroes is: " + result[2]);
     }
 
     public static void minMaxSumImpl(){
-        int [] arr = new int[5];
-
-
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println("Please enter the number " + (i+1) +" integer of the array:" );
-            arr[i] = in.nextInt();
-        }
-
+        int[] arr = IOUtils.arrayInput();
         int [] result = Algorithms.minMax(arr);
 
-        for(int el : result){
-            System.out.print(el + " ");
-        }
+        System.out.println("The sum of the " + (arr.length-1) + " smallest integers = " + result[0]);
+        System.out.println("The sum of the " + (arr.length-1) + " biggest integers = " + result[1]);
+
     }
 
     public static void maxCountImpl(){

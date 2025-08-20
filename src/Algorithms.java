@@ -67,8 +67,9 @@ public class Algorithms {
 
         System.out.println("pos "+numOfPositives);
         System.out.println("neg "+numOfNegatives);
-        System.out.println("len "+arr.length);
         System.out.println("zeroes "+(arr.length - numOfPositives - numOfNegatives));
+        System.out.println("length "+arr.length);
+
 
         frequencies[0] = freqOfPositives;
         frequencies[1] = freqOfNegatives;
