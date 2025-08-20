@@ -22,6 +22,8 @@ public final class IOUtils {
         }
 
 
+
+
         int[] arr = new int[length];
 
         for (int i = 0; i < length; i++) {
@@ -30,6 +32,32 @@ public final class IOUtils {
         }
 
         System.out.println("You entered the array: " + Arrays.toString(arr));
+        System.out.println();
+        return arr;
+    }
+
+    public static int[][] squareMatrixInput(){
+        int size;
+
+        System.out.println("Please define the size of the 2D square matrix:");
+
+        size = in.nextInt();
+
+        int[][] arr = new int[size][size];
+
+        for (int i = 0; i < size ; i++) {
+            System.out.println("Please enter the elements of row " + (i+1) + ":");
+            for (int j = 0; j < size; j++) {
+                int el = in.nextInt();
+
+                arr[i][j] = el;
+            }
+        }
+        System.out.println("The 2d matrix you entered is: ");
+        System.out.println();
+        for(int[] row : arr){
+            System.out.println(Arrays.toString(row));
+        }
         System.out.println();
         return arr;
     }

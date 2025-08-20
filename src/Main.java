@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Main {
     static Scanner in = new Scanner(System.in);
     public static void main(String[] args) {
+     arrayDiagonalsImpl();
 
     }
 
@@ -64,24 +65,9 @@ public class Main {
     }
 
     public static void arrayDiagonalsImpl(){
-        int size;
+      int [][] arr = IOUtils.squareMatrixInput();
 
-        System.out.println("Please define the size of the 2D square matrix:");
-
-        size = in.nextInt();
-
-        int[][] arr = new int[size][size];
-
-        for (int i = 0; i < size ; i++) {
-            System.out.println("Please enter the elements of row " + (i+1) + ":");
-            for (int j = 0; j < size; j++) {
-                int el = in.nextInt();
-
-                arr[i][j] = el;
-            }
-        }
-
-        int[] result = Algorithms.arrayDiagonals(arr, size);
+        int[] result = Algorithms.arrayDiagonals(arr);
 
         System.out.println("The sum of elements of the main diagonal = " + result[0]);
         System.out.println("The sum of elements of the secondary diagonal = " + result[1]);
