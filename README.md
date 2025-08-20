@@ -5,6 +5,8 @@
 
 This is a comprehensive Java algorithms application developed as an educational exercise for Coding Factory 8 of AUEB (Athens University of Economics and Business). The application provides an interactive console-based interface that allows users to explore and test various fundamental algorithms and data structures concepts.
 
+![Application Main Menu](static/images/terminal-screenshot.png)
+
 ## Project Structure
 
 The application is organized into the following components:
